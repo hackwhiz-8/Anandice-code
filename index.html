@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Anand-ICE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    
+    
+    /* Add Animation */
+    .modal-content, #caption {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+    
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+    
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+    
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+    </style>
+
+  <style>
+    nav {
+      background: #ADD8E6;
+      opacity: 0.6;
+    }
+
+    .footer {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0000A0;
+      font-weight: 800;
+    }
+
+    nav ul {
+      margin: auto;
+    }
+
+    nav ul li {
+      padding-left: 15px;
+    }
+
+    .l1:hover .div1 {
+      display: block;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+
+    hr {
+      width: 1105px;
+      height: 2px;
+      background: #ffffff;
+    }
+
+    h3 {
+      color: #0000A0;
+      font-size: 20px;
+      font-family: verdana;
+      font-weight: 800;
+    }
+
+    .p1,
+    strong {
+      text-align: justify;
+      font-size: 14px;
+      font-weight: 570;
+      font-family: verdana;
+      color: #0000ff;
+    }
+    .red
+    {
+      color:red;
+    }
+    strong {
+      color: #0000ff;
+      font-weight: 650;
+    }
+
+    .blink {
+      -webkit-animation: blink .75s linear infinite;
+      -moz-animation: blink .75s linear infinite;
+      -ms-animation: blink .75s linear infinite;
+      -o-animation: blink .75s linear infinite;
+      animation: blink .75s linear infinite;
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      50.01% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-moz-keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      50.01% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-ms-keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      50.01% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-o-keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      50.01% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      50.01% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body style="margin:0px;padding-top:10px;">
+
+  <div class="container-fluid" style="padding:0px;margin-bottom:10px;float:left;width:100%;">
+    <div style="width:15%;float:left;padding:0px;margin:0px;">
+      <img src="images/rtu.png" class="img-fluid mx-auto d-block" width="45%" height="45%"
+        alt="Rajasthan Technical University">
+    </div>
+    <div
+      style="width:70%;padding:0px;margin:0px;float:left;font-size:24px;color:black;font-family:Book Antiqua;text-align:center;font-weight:bold">
+      <img src="images/logo.png" class="img-fluid mx-auto d-block" alt="Anand International College of Engineering, Jaipur."
+        style="width:60%"><br>
+        <img src="images/ilogo.jpg" class="img-fluid mx-auto d-block" alt="Anand International College of Engineering, Jaipur."
+        style="width:10%"><br>
+      <p> 4<sup>th</sup> International Conference on Recent Development in Engineering & Technology
+        <br />ICRDET-2024<br />(HYBRID)</br>(16 -17 January 2024)
+      </p>
+    </div>
+    <div style="width:15%;float:right;padding:0px;margin:0px;">
+      <img src="images/rtu.png" width="45%" height="45%" class="img-fluid mx-auto d-block"
+        alt="Rajasthan Technical University">
+    </div>
+  </div>
+
+
+  <nav class="navbar navbar-expand-sm sticky-top">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown l1">
+        <a class="nav-link" href="#">ANNOUNCEMENT</a>
+        <div class="dropdown-menu div1" style="background:#000000;">
+          <a class="dropdown-item" style="color:#ffffff" href="callforpapers.html">Call for Papers</a>
+
+          <a class="dropdown-item" style="color:#ffffff" href="authorguidelines.html">Author Guidelines</a>
+          <a class="dropdown-item" style="color:#ffffff" href="importantdates.html">Important Dates</a>
+           <a class="dropdown-item" style="color:#ffffff" href="icrdetawards.html">ICRDET AWARDS</a>
+        </div>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown l1">
+        <a class="nav-link" href="#">COMMITTEES</a>
+        <div class="dropdown-menu div1" style="background:#000000;">
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#oc">Organizing Committee</a>  
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#sc">Steering Committee</a> 
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#ec">Editorial Committee</a>
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#tpc">Technical Program Committee</a>
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#rc">Registration Committee</a>
+          <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#pmc">Publication & Media Committee</a>
+          <!--<a class="dropdown-item" style="color:#ffffff" href="internationaladvisorycommittee.html">National/International Advisory Committee</a>-->
+        </div>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown l1">
+        <a class="nav-link" href="#">PROGRAM</a>
+        <div class="dropdown-menu div1" style="background:#000000;">
+          <a class="dropdown-item" style="color:#ffffff" href="keynotespeaker.html">Key Note Speaker</a>
+          <a class="dropdown-item" style="color:#ffffff" href="invitedspeaker.html">Invited Speaker</a>
+          <!--<a class="dropdown-item" style="color:#ffffff" href="images/ICRDET 2021 SESSION DETAILS 25.02.2021.xlsx">Session Details</a>
+          <a class="dropdown-item" style="color:#ffffff" href="images/ICRDET Detail Schedule FINAL 25.02.2021-WITH MEETING LINKS.pdf">Tentative Schedule</a>
+          <a class="dropdown-item" style="color:#ffffff" href="images/ICRDET-2021 Registration.pdf">Registered Candidates</a>-->
+        </div>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown l1">
+        <a class="nav-link" href="#">REGISTRATION</a>
+        <div class="dropdown-menu div1" style="background:#000000;">
+          <a class="dropdown-item" style="color:#ffffff" href="registration.html">Registration Details</a>
+
+        <!--  <a class="dropdown-item" style="color:#ffffff" target="_blank"
+            href="https://forms.gle/segrFYChbCSNMvCa6">Online Registration</a> -->
+          <a class="dropdown-item" style="color:#ffffff" href="onlinepapersubmission.html">Online Paper Submission</a>
+        </div>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown l1">
+        <a class="nav-link" href="#">INFORMATION</a>
+        <div class="dropdown-menu div1" style="background:#000000;">
+          <a class="dropdown-item" style="color:#ffffff" href="history.html">History</a>  
+          <a class="dropdown-item" style="color:#ffffff" href="venue.html">Venue</a>
+          <a class="dropdown-item" style="color:#ffffff" href="howtoreach.html">How to Reach</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="publication.html">PUBLICATION</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.html">CONTACT US</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <marquee class="red"> <p>Schedule for ICRDET-2024 <a href="images/Schicrdet24.pdf">  Click Here to Download.</a>.</p></marquee>
+   
+
+  <!-- Slider -->
+  <div class="container" style="margin-top:5px;">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/jaipur.jpg" alt="Jaipur City" style="width:100%;height:400px;">
+          <div class="carousel-caption">
+            <h4>Jaipur</h4>
+            <p>Jaipur, the Capital of Rajasthan is famous for its Beauty, Heritage, Rich Culture, Art & Craft, thus
+              making it a perfect tourist destination.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/aice.jpg" alt="Anand ICE" style="width:100%;height:400px;">
+          <div class="carousel-caption">
+            <h4>Anand International College of Engineering</h4>
+            <p>Best Engineering College in Rajasthan</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+  <!-- Slider Ends -->
+  <hr>
+  <hr>
+  <div style="padding-left: 20%; padding-right:20%">
+  <!--<marquee behavior="scroll" direction="left" style="color: red;scrollamount="20" ;padding-left: 10%; padding-right:10%">2<sup>nd</sup> ICRDET!! FEBRUARY 26-27,2021!! No registraion fee!! All accepted and presented papers will be published in Scopus Indexed Journals and Conference Proceedings!! Last date of full paper submission-06 Feb.!! Registraion Open!!</marquee> -->
+</div>
+
+  <!-- Page Contents -->
+
+
+  <div class="container" style="float:left;margin-left:8%;margin-bottom:15px;">
+    <div style="width:60%;float:left;padding-left:10px;padding-right:10px;">
+      <div>
+
+        <h3> Welcome to ICRDET-2024: </h3>
+        <p class="p1">
+          Welcome to the official website of the International Conference on Recent Development in Engineering & Technology (ICRDET-2024). The conference will be held at Anand International College of Engineering, Jaipur, India on 16th-17th January, 2024. The objective of 4th ICRDET-2024 is in the line of UN 2030 agenda for Sustainable Development: “Transforming our world” focused on SDG 03, SDG 08 & SDG 12 with the objective to support sustainable development strategies and the implementation of the 2030 Agenda for Sustainable Development.  The conference focuses on innovative advancements and sustainability in Engineering and Technology that aims for peace and prosperity for people and the planet, now and into the future. It helps experts, researchers, and industry professionals worldwide to come together to share knowledge and shape the future engineering sustainably.  </p>
+          
+      </div>
+      <div>
+        <h3> About Rajasthan Technical University, Kota: </h3>
+        <p class="p1"> Rajasthan Technical University (RTU) is located in Kota in the state of Rajasthan. It was established in 2006 by the Government of Rajasthan to enhance the technical education in the state. The university has been established in the campus of University College of Engineering, Kota (previously known as Engineering College, Kota), which is located on the Rawatbhata Road, The university currently affiliates about 68 Engineering Colleges, 03 B.Arch., 16 MCA Colleges, 39 MBA Colleges, 31 M.Tech Colleges, 01 M.Arch and 01 Hotel Management and Catering Institute. The University aims to provide quality technical education which may help Rajasthan in its technical development and will boost technical environment in the country.The University offers almost all the disciplines related to technical education including Bachelor of Technology, Master of Technology, Master of Business Administration, Master of Computer Applications, and Bachelor of Hotel Management and Catering Technology. The University is making steady progress in developing and providing best technical environment for education and will continue to serve the nation in coming years. </p>
+      </div>
+      <div>
+        <h3> About Anand International College of Engineering: </h3>
+        <p class="p1"> Anand International College of Engineering (Anand-ICE), approved by AICTE, is amongst the premier RTU affiliated colleges in Jaipur established in the year 2010. Since its inception, the institute persists its credentials of joyous teaching-learning environs of global standards and offers B-Tech Degree programs in Civil Engineering, Computer Science Engineering, Electrical Engineering,Computer Science and Engineering (Artificial Intelligence), and Mechanical Engineering. The Institute nurtures intellectually inspiring Academic Environment with world-class infrastructure, state-of-the-art laboratories, and a lush green landscaped campus. </p>
+      </div>
+      <div>
+        
+        <h3> About Jaipur: </h3>
+            
+          
+
+          <p class="p1"> Rajasthan's beautiful Pink City Jaipur was the stronghold of a clan of rulers whose three hill
+            forts and series of palaces in the city are important attractions. Known as the Pink City because of the
+            color
+            of the stone used exclusively in the walled city, Jaipur's bazaars sell embroidered leather shoes, blue
+            pottery, tie and dye scarves and other exotic wares. Western Rajasthan itself forms a convenient circuit in
+            the heart of the Thar Desert which has shaped its history lifestyles and architecture.</p>
+          <p class="p1"> Founded in AD 1727 by Sawai Jaisingh II Jaipur the capital of Rajasthan is popularly known as
+            the
+            Pink City with broad avenues and spacious gardens. The capital of Rajasthan Jaipur is steeped in history and
+            culture. Here the past comes alive in magnificent forts and palaces blushed pink where once lived the
+            maharajas. The bustling bazaars of Jaipur famous for Rajasthani Jewellery fabric and shoes possess a
+            timeless
+            quality and are surely a treasure-trove for the shoppers. This fascinating city with its romantic charm
+            takes
+            you to an epoch of royalty and tradition. </p>
+          <p class="p1"> Jaipur has been laid according to the conventional nine-grid pattern that astrologers believe
+            to
+            be lucky and which has been recommended in the ancient Indian treatise on architecture. Each grid consists
+            of
+            a square and these have been planned so that at the heart of the city is the City Palace. Spread around it
+            in
+            rows are public buildings the residences of noble men the living and trading quarters of merchants and
+            artisans. Straight wide roads run through the city while a high crenellated wall that forms its defense is
+            pierced with seven gateways that serve as entry points. Today these walls may be more difficult to spot
+            since
+            the city has grown far beyond its original plan but they are still there proof that though Jaipur saw no
+            great
+            siege it was more than adequately prepared for it. </p>
+        </div>
+         
+         
+
+
+
+       <!-- <div>
+          <h3>Chief Patron:</h3>
+          <strong>Prof. S. K. Singh</strong>
+          <p class="p1">Honorable Vice Chancellor, RTU, Kota, India</p>
+         
+        </div>
+        <div>
+          <h3>Patron(s):</h3>
+          <strong>Mr. Manoj Mittal</strong>
+          <p class="p1">Chairman, Anand-ICE, Jaipur, India</p>
+          <strong>Ms. Monika Mittal</strong>
+          <p class="p1">Vice Chairperson, Anand-ICE, Jaipur, India</p>
+          <strong>Prof. Vijay Kumar Sharma</strong>
+          <p class="p1">Principal, Anand-ICE, Jaipur, India</p>
+          <strong>Prof. Praveen Agarwal</strong>
+          <p class="p1">Vice Principal, Anand-ICE, Jaipur, India</p>
+
+
+         
+        </div>
+        
+        
+        <div>
+          <h3>General Chair(s):</h3>
+          <strong>Prof. Praveen Agarwal</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+           <strong>Prof. A.K. Dwivedi</strong>
+          <p class="p1">RTU, KOTA, India</p>
+        </div>
+        <div>
+          <h3>Organizing Chair(s):</h3>
+          <strong>Prof. Bhavana Mathur</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Prof. Deepak Bhatia</strong>
+          <p class="p1">RTU, KOTA, India</p>
+
+        </div>
+        <div>
+          <h3>Publicity Chair:</h3>
+          <strong>Prof. Anil Dhawan</strong>
+          <p class="p1">Anand-ICE, Jaipur</p>
+          <strong>Er. Pramil Sinha</strong>
+          <p class="p1">Anand-ICE, Jaipur</p>
+          <strong>Er. Neeraj Manglani</strong>
+          <p class="p1">Anand-ICE, Jaipur</p>
+          <strong>Er. Shiv Kumar S</strong>
+          <p class="p1">Anand-ICE, Jaipur</p>
+        
+         </div>
+         
+         <div>
+          <h3>Website Development:</h3>
+          <strong>Er. Sanjog Arora</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+         <!-- <strong>Shiv Prasad Sharma</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+        </div>
+        <div>
+          <h3>Promotion:</h3>
+          <strong>Er. Vivek Bhojak</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Er. Neeraj Manglani</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Er. Siddharth</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+        </div>
+        <div>
+          <h3>Registration Committee:</h3>
+          <strong>Er. Meharuddin Ahmad</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Dr. Prakash Singh</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Er. Anil Bhargava</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+          <strong>Mr. Dheerendra Saini</strong>
+          <p class="p1">Anand-ICE, Jaipur, India</p>
+
+
+        </div>
+
+
+        <div>
+        
+        <h3> Previous Conferences</h3>
+            
+          
+
+          <p class="p1">• 1st International Conference on Recent Developments in Engineering and Technology (ICRDET-2019) sponsored by RTU(ATU) TEQIP-III held at Anand International College of Engineering, Jaipur on September 14th -15th, 2019 jointly organized by RTU, KOTA and Anand International College of Engineering (<a class="red" href="https://anandice.ac.in/icrdet/index.html">Website: https://anandice.ac.in/icrdet/index.html</a>). The 24 full papers were carefully reviewed and selected from 87 submissions. The papers were published online in Conference Proceeding. You can download and share using the below link:
+         <a class="red" href="https://anandice.ac.in/icrdet/images/p.pdf">https://anandice.ac.in/icrdet/images/p.pdf</a></p>
+
+
+          <p class="p1">• The 2nd (ONLINE) International Conference on Recent Developments in Engineering and Technology (ICRDET-2021) sponsored by RTU(ATU) TEQIP-III held at Anand International College of Engineering, Jaipur on February, 24th -25th , 2021 jointly organized by RTU, KOTA and Anand International College of Engineering (<a class="red" href="http://anandice.ac.in/icrdet21/">Website : http://anandice.ac.in/icrdet21/</a>).  The 114 full papers were presented. The papers were published online in the following SCIE, ESCI, SCOPUS indexed Journals and Conference Proceeding details are as follows: </p>
+
+
+           <p class="p1">1. Selected Papers published in the Special Issue of <font class="red">"Advanced Mathematical Tool-Based Internet of Things (IoT)"</font> [Indexed by SCI-E (IF 1.593), Free]
+            </br><a class="red" href="https://www.techscience.com/CMES/special_detail/mathematical-tool">https://www.techscience.com/CMES/special_detail/mathematical-tool</a>
+          </p>
+          
+           <p class="p1">2. Selected Papers are under review will be published in the Special Issue of <font class="red">“Journal of Nonlinear Sciences and Applications”</font> [Indexed by Mathematical Reviews, Free] 
+             </br><a class="red" href="https://www.isr-publications.com/jnsa/announcements/18/special-issue-on-2nd-international-conference-on-recent-development-in-engineering-technology-icrdet-2021">https://www.isr-publications.com/jnsa/announcements/18/special-issue-on-2nd-international-conference-on-recent-development-in-engineering-technology-icrdet-2021</a>
+           </p>
+
+           <p class="p1">3. Selected Papers were published in the Special Issue of Special Issue of <font class="red">“Engineering and Applied Science Letters (EASL)”</font> [Indexed by Crossref  DOI prefix: 10.30538, Free]  </br><a class="red" href="https://pisrt.org/psr-press/journals/easl/">https://pisrt.org/psr-press/journals/easl/</a>
+           </p>
+           <p class="p1">4. Selected Papers are under review will be published in the Special Issue of <font class="red">“Communications in Mathematics and Applications”</font> [Indexed by ESCI, Free] </br> <a class="red" href="https://www.rgnpublications.com/journals/">https://www.rgnpublications.com/journals/</a>
+
+           </p>
+
+            <p class="p1">5. Selected Papers are under review will be published in the Special Issue of  <font class="red">“Applications and Applied Mathematics: An International Journal (AAM)”</font> [Indexed by ESCI, Free]
+               </br><a class="red" href="https://www.pvamu.edu/aam/">https://www.pvamu.edu/aam/</a>
+
+
+           </p>
+
+            <p class="p1">6. Selected PAPERS are under review will be published in FULL-TEXT <font class="red">PROCEEDING BOOK of ICRDET-2021</font> with ISBN number.</p>
+            
+        <p class="p1">• The 3rd (HYBRID) International Conference on Recent Developments in Engineering and Technology (ICRDET-2022) held at Anand International College of Engineering, Jaipur on February, 25th -26th , 2022 jointly organized by RTU, KOTA and 
+        Anand International College of Engineering (<a class="red" href="http://anandice.ac.in/icrdet22/">Website : http://anandice.ac.in/icrdet22/</a>).  The 114 full papers were presented. The papers were published online in the following SCIE, ESCI, SCOPUS indexed Journals and Conference Proceeding details are as follows: </p>
+
+
+           <p class="p1">1. 1.	Selected PAPERS were published in FULL-TEXT  <font class="red">PROCEEDING BOOK of ICRDET-2022</font> with ISBN number978-81-953996-5-9.
+         <!--   </br><a class="red" href="https://www.techscience.com/CMES/special_detail/mathematical-tool">https://www.techscience.com/CMES/special_detail/mathematical-tool</a>-->
+          <!--</p>
+          
+           <p class="p1">2. Selected PAPERS are under review will be published in  <font class="red">“Discrete & Continuous Dynamical Systems - S [Indexed by SCI-E (IF 2.425), Scopus CiteScore: 3.1”</font> 
+           </p>
+
+           <p class="p1">3. Selected PAPERS are under review will be published in  <font class="red">“SPRINGER PROCEEDING BOOK”</font> 
+           </p>
+           <p class="p1">4. Selected PAPERS are under review will be published in  <font class="red">“Mathematical Modelling and Control”</font> 
+           </p>
+           <p class="p1">5. Selected PAPERS are under review will be published in  <font class="red">“Math Model Num Sim Appl”</font> 
+           </p>
+           <p class="p1">6. Selected PAPERS are under review will be published in  <font class="red">“Journal of Engineering Science”</font> 
+           </p>
+          <p class="p1">7. Selected PAPERS are under review will be published in  <font class="red">“Operational Research in Engineering Sciences: Theory and Applications [Indexed by SCOPUS, with APC]”</font> 
+           </p>
+           <p class="p1">8. Selected PAPERS are under review will be published in  <font class="red">“Pure and Applied Advances in the Fractional Calculus: Applications [Indexed by SCOPUS]”</font> 
+           </p>
+        </div>
+
+
+
+
+
+
+      
+
+        </div>-->
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+        <div style="width:35%;float:right;">
+            <div class="table-responsive">
+			<h3 style="text-align:center"> Important Dates: </h3>
+			<table style="width:90%;" class="table-striped" align="center">
+        <tr>
+      <td>Registration Open</td>
+      <td>18<sup>th</sup> November, 2023</td>
+      </tr>
+			<tr>
+			<td>Paper submission deadline</td>
+			<td style="color: red;">31<sup>th</sup> December, 2023</td>
+			</tr>
+			<tr>
+			<td>Notification of Acceptance</td>
+			<td style="color: navy;">7<sup>th</sup>January, 2024</td>
+			</tr>
+			<tr>
+			<td>Last date of registration</td>
+			<td style="color: red;">10<sup>th</sup> January, 2024</td>
+			</tr>
+			<tr>
+			<td>Date of Conference</td>
+			<td style="color: green;">16<sup>th</sup>-17<sup>th</sup> January, 2024</td>
+			</tr>
+
+			</table><br/><br/>
+			<h3 style="text-align:center"> Publication Partners: </h3>
+			<img src="images/logo-02.jpg" width=400px height=50px alt="AICE" style="margin:0 auto;display:inline; "><br/><br/>
+			<h3 style="text-align:center"> Abstract Book</h3>
+			<a href="images/FAB.pdf"><img src="images/AB.png" width="100%" height="100%" alt="Abstract Book" style="margin:0 auto;display:block;"></a>
+		</div>
+            
+          <!--<div>
+            <embed src="images/ICRDET 2022 Conference Proceeding.pdf" padding="10px" width="400px" height="500px" />
+            <h6 align="center">ICRDET 2021 Conference Proceeding</h6>
+            <embed src="images/ICRDET 2022 Abstract Book.pdf" padding="10px" width="400px" height="500px" />
+            <h6 align="center">ICRDET 2022 Abstract Book</h6>
+            <embed src="images/ICRDET 2021 Conference Proceeding.pdf" padding="10px" width="400px" height="500px" />
+            <h6 align="center">ICRDET 2021 Conference Proceeding</h6>
+            <h3 align="center">Jointly organized by ANAND-ICE & RTU KOTA:</h3>
+            <div style="margin-top:5px;margin-bottom:30px;width:100%;">
+              <img src="images/logo.png" width=400px height=100px alt="AICE" style="margin:0 auto;display:inline; "><br>
+              <img src="images/rtu.png" width="35%" height="25%" alt="RTU" style="margin:0 auto;display:block;">
+            </div>  
+          </div>-->
+         </div>
+      
+      
+    
+    </div>
+    <!-- Footer -->
+    <div class="footer" style="float:left;">
+      <p style="text-align:center;">&copy;2023 Anand International College of Engineering</p>
+      <p style="text-align:center;"><a href="https://www.anandice.ac.in">www.anandice.ac.in</a></p>
+    </div>
+    <div class="footer" style="float:left;">
+      <p style="text-align:center; font-size:10px">Site is developed & maintained by Department of Computer
+        Science, AnandICE</p>
+       
+     
+    <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+      <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+      <div class="w3-modal-content w3-animate-zoom">
+        <img id="img01"  style="width:100%">
+      </div>
+    </div>
+    
+
+        
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() { 
+        modal.style.display = "none";
+      }
+      </script>
+      
+
+    <script>
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+      }
+    </script>
+     
+    
+</body>
+
+</html>
