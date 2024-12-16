@@ -6,15 +6,118 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
   <script src="jquery.min.js"></script>
   <script src="popper.min.js"></script>
   <script src="bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+
+    /* Add Animation */
+    .modal-content,
+    #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+  </style>
 
   <style>
     nav {
       background: #ADD8E6;
       opacity: 0.6;
+    }
+
+    .footer {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
     }
 
     nav a {
@@ -24,13 +127,6 @@
 
     nav ul {
       margin: auto;
-    }
-
-    .footer {
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
     }
 
     nav ul li {
@@ -68,23 +164,13 @@
       color: #0000ff;
     }
 
+    .red {
+      color: red;
+    }
+
     strong {
       color: #0000ff;
       font-weight: 650;
-    }
-
-    td,
-    th {
-      font-size: 14px;
-      font-family: verdana;
-      color: #0000ff;
-      text-align: justify;
-      width: 33.33%;
-      border: 1px solid #999999;
-    }
-
-    table {
-      border-collapse: collapse;
     }
 
     .blink {
@@ -200,7 +286,7 @@
       style="width:70%;padding:0px;margin:0px;float:left;font-size:24px;color:black;font-family:Book Antiqua;text-align:center;font-weight:bold">
       <img src="images/logo.png" class="img-fluid mx-auto d-block"
         alt="Anand International College of Engineering, Jaipur." style="width:60%"><br>
-        <img src="images/lebanon.jpg" class="img-fluid mx-auto d-block"
+      <img src="images/lebanon.jpg" class="img-fluid mx-auto d-block"
         alt="Anand International College of Engineering, Jaipur." style="width:30%"><br>
       <p> 1<sup>st</sup> International Conference on Advanced Complex Dynamic Systems and Their Applications
         <br />ICACDSA-2025<br />(HYBRID)</br>(21-22 April 2025)
@@ -242,7 +328,7 @@
           <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#isc">International Scientific
             Committee</a>
           <a class="dropdown-item" style="color:#ffffff" href="organizingcommittee.html#mem">Members</a>
-          <!--<a class="dropdown-item" style="color:#ffffff" href="internationaladvisorycommittee.html">National/International Advisory Committee</a>-->
+          <!-- <a class="dropdown-item" style="color:#ffffff" href="internationaladvisorycommittee.html">National/International Advisory Committee</a> -->
         </div>
       </li>
 
@@ -252,7 +338,7 @@
         <!-- <div class="dropdown-menu div1" style="background:#000000;">
           <a class="dropdown-item" style="color:#ffffff" href="keynotespeaker.html">Key Note Speaker</a>
           <a class="dropdown-item" style="color:#ffffff" href="invitedspeaker.html">Invited Speaker</a> -->
-          <!--<a class="dropdown-item" style="color:#ffffff" href="images/ICRDET 2021 SESSION DETAILS 25.02.2021.xlsx">Session Details</a>
+        <!--<a class="dropdown-item" style="color:#ffffff" href="images/ICRDET 2021 SESSION DETAILS 25.02.2021.xlsx">Session Details</a>
           <a class="dropdown-item" style="color:#ffffff" href="images/ICRDET Detail Schedule FINAL 25.02.2021-WITH MEETING LINKS.pdf">Tentative Schedule</a>
           <a class="dropdown-item" style="color:#ffffff" href="images/ICRDET-2021 Registration.pdf">Registered Candidates</a>-->
         <!-- </div> -->
@@ -291,6 +377,9 @@
     </ul>
   </nav>
 
+  <!-- <marquee class="red">
+    <p>Schedule for ICRDET-2024 <a href="images/Schicrdet24.pdf"> Click Here to Download.</a>.</p>
+  </marquee> -->
 
 
   <!-- Slider -->
@@ -327,136 +416,15 @@
   </div>
   <!-- Slider Ends -->
   <hr>
-
-  <!-- Page Contents -->
-  <div class="container" style="float:left;margin-left:8%;margin-bottom:15px;">
-
-    <div style="width:60%;float:left;padding-left:10px;padding-right:10px;">
-      <div>
-        <h3> Previous Conferences</h3>
-
-
-
-        <p class="p1">• 1st International Conference on Recent Developments in Engineering and Technology (ICRDET-2019)
-          sponsored by RTU(ATU) TEQIP-III held at Anand International College of Engineering, Jaipur on September 14th
-          -15th, 2019 jointly organized by RTU, KOTA and Anand International College of Engineering (<a class="red"
-            href="https://anandice.ac.in/icrdet/index.html">Website: https://anandice.ac.in/icrdet/index.html</a>). The
-          24 full papers were carefully reviewed and selected from 87 submissions. The papers were published online in
-          Conference Proceeding. You can download and share using the below link:
-          <a class="red"
-            href="https://anandice.ac.in/icrdet/images/p.pdf">https://anandice.ac.in/icrdet/images/p.pdf</a>
-        </p>
-
-
-        <p class="p1">• The 2nd (ONLINE) International Conference on Recent Developments in Engineering and Technology
-          (ICRDET-2021) sponsored by RTU(ATU) TEQIP-III held at Anand International College of Engineering, Jaipur on
-          February, 24th -25th , 2021 jointly organized by RTU, KOTA and Anand International College of Engineering (<a
-            class="red" href="http://anandice.ac.in/icrdet21/">Website : http://anandice.ac.in/icrdet21/</a>). The 114
-          full papers were presented. The papers were published online in the following SCIE, ESCI, SCOPUS indexed
-          Journals and Conference Proceeding details are as follows: </p>
-
-
-        <p class="p1">1. Selected Papers published in the Special Issue of <font class="red">"Advanced Mathematical
-            Tool-Based Internet of Things (IoT)"</font> [Indexed by SCI-E (IF 1.593), Free]
-          </br><a class="red"
-            href="https://www.techscience.com/CMES/special_detail/mathematical-tool">https://www.techscience.com/CMES/special_detail/mathematical-tool</a>
-        </p>
-
-        <p class="p1">2. Selected Papers are under review will be published in the Special Issue of <font class="red">
-            “Journal of Nonlinear Sciences and Applications”</font> [Indexed by Mathematical Reviews, Free]
-          </br><a class="red"
-            href="https://www.isr-publications.com/jnsa/announcements/18/special-issue-on-2nd-international-conference-on-recent-development-in-engineering-technology-icrdet-2021">https://www.isr-publications.com/jnsa/announcements/18/special-issue-on-2nd-international-conference-on-recent-development-in-engineering-technology-icrdet-2021</a>
-        </p>
-
-        <p class="p1">3. Selected Papers were published in the Special Issue of Special Issue of <font class="red">
-            “Engineering and Applied Science Letters (EASL)”</font> [Indexed by Crossref DOI prefix: 10.30538, Free]
-          </br><a class="red"
-            href="https://pisrt.org/psr-press/journals/easl/">https://pisrt.org/psr-press/journals/easl/</a>
-        </p>
-        <p class="p1">4. Selected Papers are under review will be published in the Special Issue of <font class="red">
-            “Communications in Mathematics and Applications”</font> [Indexed by ESCI, Free] </br> <a class="red"
-            href="https://www.rgnpublications.com/journals/">https://www.rgnpublications.com/journals/</a>
-
-        </p>
-
-        <p class="p1">5. Selected Papers are under review will be published in the Special Issue of <font class="red">
-            “Applications and Applied Mathematics: An International Journal (AAM)”</font> [Indexed by ESCI, Free]
-          </br><a class="red" href="https://www.pvamu.edu/aam/">https://www.pvamu.edu/aam/</a>
-
-
-        </p>
-
-        <p class="p1">6. Selected PAPERS are under review will be published in FULL-TEXT <font class="red">PROCEEDING
-            BOOK of ICRDET-2021</font> with ISBN number.</p>
-
-        <p class="p1">• The 3rd (HYBRID) International Conference on Recent Developments in Engineering and Technology
-          (ICRDET-2022) held at Anand International College of Engineering, Jaipur on February, 25th -26th , 2022
-          jointly organized by RTU, KOTA and
-          Anand International College of Engineering (<a class="red" href="http://anandice.ac.in/icrdet22/">Website :
-            http://anandice.ac.in/icrdet22/</a>). The 114 full papers were presented. The papers were published online
-          in the following SCIE, ESCI, SCOPUS indexed Journals and Conference Proceeding details are as follows: </p>
-
-
-        <p class="p1">1. 1. Selected PAPERS were published in FULL-TEXT <font class="red">PROCEEDING BOOK of ICRDET-2022
-          </font> with ISBN number978-81-953996-5-9.
-          <!--   </br><a class="red" href="https://www.techscience.com/CMES/special_detail/mathematical-tool">https://www.techscience.com/CMES/special_detail/mathematical-tool</a>-->
-          <!--</p>-->
-
-        <p class="p1">2. Selected PAPERS are under review will be published in <font class="red">“Discrete & Continuous
-            Dynamical Systems - S [Indexed by SCI-E (IF 2.425), Scopus CiteScore: 3.1”</font>
-        </p>
-
-        <p class="p1">3. Selected PAPERS are under review will be published in <font class="red">“SPRINGER PROCEEDING
-            BOOK”</font>
-        </p>
-        <p class="p1">4. Selected PAPERS are under review will be published in <font class="red">“Mathematical Modelling
-            and Control”</font>
-        </p>
-        <p class="p1">5. Selected PAPERS are under review will be published in <font class="red">“Math Model Num Sim
-            Appl”</font>
-        </p>
-        <p class="p1">6. Selected PAPERS are under review will be published in <font class="red">“Journal of Engineering
-            Science”</font>
-        </p>
-        <p class="p1">7. Selected PAPERS are under review will be published in <font class="red">“Operational Research
-            in Engineering Sciences: Theory and Applications [Indexed by SCOPUS, with APC]”</font>
-        </p>
-        <p class="p1">8. Selected PAPERS are under review will be published in <font class="red">“Pure and Applied
-            Advances in the Fractional Calculus: Applications [Indexed by SCOPUS]”</font>
-        </p>
-
-      </div>
-
-    </div>
-
-    <div style="width:35%;float:right;">
-      <div>
-        <h3 align="center">Jointly organized by ANAND-ICE & RTU KOTA:</h3>
-        <div style="margin-top:5px;margin-bottom:30px;width:100%;">
-          <img src="images/logo.png" width="90%" height="90%" alt="AICE" style="margin:0 auto;display:block;"><br>
-          <img src="images/rtu.png" width="35%" height="25%" alt="RTU" style="margin:0 auto;display:block;">
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+  <hr>
+  <div style="padding-left: 20%; padding-right:20%">
+    <!--<marquee behavior="scroll" direction="left" style="color: red;scrollamount="20" ;padding-left: 10%; padding-right:10%">2<sup>nd</sup> ICRDET!! FEBRUARY 26-27,2021!! No registraion fee!! All accepted and presented papers will be published in Scopus Indexed Journals and Conference Proceedings!! Last date of full paper submission-06 Feb.!! Registraion Open!!</marquee> -->
   </div>
 
+  <!-- Page Contents --> 
+  <div>
+    <h3 style="text-align:center; color: red;"> To be announced later</h3>
   </div>
-
-  </div>
-
-
-  <p>
-
-
-  </p>
-  </div>
-  </div>
-  </div>
-
-  </div>
-
 
   <!-- Footer -->
   <div class="footer" style="float:left;">
@@ -465,8 +433,48 @@
   </div>
   <div class="footer" style="float:left;">
     <p style="text-align:center; font-size:10px">Site is developed & maintained by Department of Computer
-      Science,AnandICE</p>
-  </div>
+      Science, AnandICE</p>
+
+
+    <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+      <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+      <div class="w3-modal-content w3-animate-zoom">
+        <img id="img01" style="width:100%">
+      </div>
+    </div>
+
+
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+    </script>
+
+
+    <script>
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+      }
+    </script>
+
+
 </body>
 
 </html>
